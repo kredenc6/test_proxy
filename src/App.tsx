@@ -32,7 +32,7 @@ export default App;
 
 
 function getWikiHtml() {
-  return fetch("/randomWiki")
+  return fetch("/wiki/Speci%C3%A1ln%C3%AD:N%C3%A1hodn%C3%A1_str%C3%A1nka")
     .then(response => response.text())
     .then(html => html)
     .catch(err => {
