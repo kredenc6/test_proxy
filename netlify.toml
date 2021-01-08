@@ -1,13 +1,6 @@
-[[redirects]]
-  from = "/wiki/*"
-  to = "https://cs.wikipedia.org/wiki/:splat"
-  force = true
-  [redirects.headers]
-    X-From = "Netlify"
-
-
-[[redirects]]
-  from = "/bestWeekWikiArticle"
-  to = "https://cs.wikipedia.org/wiki/Wikipedie:%C4%8Cl%C3%A1nek_t%C3%BDdne"
-  force = true
-  headers = {X-From = "Netlify"}
+  [[redirects]]
+    from = "/randomWiki"
+    to = "https://cs.wikipedia.org/wiki/Speci%C3%A1ln%C3%AD:N%C3%A1hodn%C3%A1_str%C3%A1nka"
+    status = 200
+    force = true
+    headers = {X-From = "*"}
