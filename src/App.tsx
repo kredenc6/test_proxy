@@ -24,6 +24,14 @@ function App() {
     <div>
       {ParagraphComponents}
       <button onClick={handleClick}>test proxy</button>
+      <button
+        onClick={() => fetch("http://localhost:9000/.netlify/functions/hello")
+        .then(response => response.text())
+        .then(data => setParagraphs([data]))
+        .catch(err => console.log(err.message))}
+      >
+        test lambda hello
+      </button>
     </div>
   );
 }
@@ -32,7 +40,7 @@ export default App;
 
 
 function getWikiHtml() {
-  return fetch("/randomWiki")
+  return fetch("/.netlify/functions/proxy/randomWiki")
     .then(response => response.text())
     .then(html => html)
     .catch(err => {
