@@ -25,7 +25,7 @@ function App() {
       {ParagraphComponents}
       <button onClick={handleClick}>test proxy</button>
       <button
-        onClick={() => fetch("http://localhost:9000/.netlify/functions/hello")
+        onClick={() => fetch("/.netlify/functions/hello")
         .then(response => response.text())
         .then(data => setParagraphs([data]))
         .catch(err => console.log(err.message))}
