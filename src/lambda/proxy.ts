@@ -1,17 +1,11 @@
-const express = require("express");
-const serverless = require("serverless-http");
-const axios = require("axios");
+import express from "express";
+import serverless from "serverless-http";
+import axios from "axios";
 
 const app = express();
 const router = express.Router();
-router.use((_, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 router.get("/randomWiki", (_, res) => {
-  console.log("rediretc runs");
   axios({
     method: "GET",
     responseType: "text",
@@ -23,4 +17,4 @@ router.get("/randomWiki", (_, res) => {
 
 app.use("/.netlify/functions/proxy", router);
 
-module.exports.handler = serverless(app);
+export const handler = serverless(app);

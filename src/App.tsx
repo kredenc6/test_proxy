@@ -32,6 +32,14 @@ function App() {
       >
         test lambda hello
       </button>
+      <button
+        onClick={() => fetch("/.netlify/functions/testAsync")
+        .then(response => response.json())
+        .then(({ msg }) => setParagraphs([msg]))
+        .catch(err => console.log(err.message))}
+      >
+        test async
+      </button>
     </div>
   );
 }
