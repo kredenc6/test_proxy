@@ -26,8 +26,8 @@ function App() {
       <button onClick={handleClick}>test proxy</button>
       <button
         onClick={() => fetch("/.netlify/functions/hello")
-        .then(response => response.text())
-        .then(data => setParagraphs([data]))
+        .then(response => response.json())
+        .then(({ message }) => setParagraphs([message]))
         .catch(err => console.log(err.message))}
       >
         test lambda hello
